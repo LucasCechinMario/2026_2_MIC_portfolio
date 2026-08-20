@@ -11,10 +11,13 @@
 
 void main(void) {
     DDRB |= 0b00100000; //define pino PB5 como saída
+    DDRD &= 0b11111011; //define pino PD3 como entrada
     while (1){
-        PORTB |= 0b00100000; //atribui nível lógico alto ao pino PB5
-        _delay_ms(100);
-        PORTB &= 0b11011111;
-        _delay_ms(900);
+        if((PIND & 0b00001000) != 0){ //ler valor da chave PD3, segue se estiver em nível lógico alto
+            PORTB |= 0b00100000; //atribui nível lógico alto ao pino PB5
+            _delay_ms(100);
+            PORTB &= 0b11011111;
+            _delay_ms(900);
+        }
     }
 }
