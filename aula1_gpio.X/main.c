@@ -9,5 +9,7 @@
 #include <xc.h>
 
 void main(void) {
-    return;
+    while (1){
+        
+    }
 }
