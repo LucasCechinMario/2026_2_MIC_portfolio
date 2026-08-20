@@ -39,3 +39,6 @@ Thumbs.db
 
 # MPLAB X - configurações privadas
 **/nbproject/private/
+
+# VS
+.vs
