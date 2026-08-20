@@ -1,0 +1,41 @@
+# ==========================================
+# MPLAB X IDE
+# ==========================================
+
+# Arquivos gerados pelo MPLAB
+.generated_files/
+build/
+dist/
+
+# Configurações específicas da máquina
+nbproject/private/
+
+# Arquivos gerados dentro de nbproject
+nbproject/Makefile-*
+nbproject/Package-*
+
+# ==========================================
+# Compilação / Toolchain
+# ==========================================
+
+*.o
+*.d
+*.elf
+*.hex
+*.map
+*.lst
+*.sym
+*.eep
+*.srec
+
+# ==========================================
+# Sistema operacional / editor
+# ==========================================
+
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# MPLAB X - configurações privadas
+**/nbproject/private/
