@@ -24,6 +24,8 @@
 
 <item itemtype="Node" CircId="Node-13" mainComp="false" Pos="-132,-116" />
 
+<item itemtype="Node" CircId="Node-15" mainComp="false" Pos="-132,-108" />
+
 <item itemtype="Connector" uid="Connector-1" startpinid="mega328PB-1-PORTB0" endpinid="Resistor-3-lPin" pointList="0,16,0,84,88,84" />
 
 <item itemtype="Connector" uid="Connector-2" startpinid="mega328PB-1-PORTB1" endpinid="Resistor-2-lPin" pointList="8,16,8,52,88,52" />
@@ -42,10 +44,14 @@
 
 <item itemtype="Connector" uid="Connector-11" startpinid="Resistor-12-lPin" endpinid="Ground-8-Gnd" pointList="-132,-60,-132,-44" />
 
-<item itemtype="Connector" uid="Connector-12" startpinid="Node-13-1" endpinid="mega328PB-1-PORTD2" pointList="-132,-116,-24,-116,-24,-88" />
-
 <item itemtype="Connector" uid="Connector-13" startpinid="Switch-11-pinP0" endpinid="Node-13-0" pointList="-132,-144,-132,-116" />
 
-<item itemtype="Connector" uid="Connector-14" startpinid="Node-13-2" endpinid="Resistor-12-rPin" pointList="-132,-116,-132,-92" />
+<item itemtype="Connector" uid="Connector-12" startpinid="Node-13-1" endpinid="mega328PB-1-PORTD2" pointList="-132,-116,-24,-116,-24,-88" />
+
+<item itemtype="Connector" uid="Connector-19" startpinid="Node-15-1" endpinid="mega328PB-1-PORTD3" pointList="-132,-108,-48,-108,-48,-64" />
+
+<item itemtype="Connector" uid="Connector-20" startpinid="Node-13-2" endpinid="Node-15-0" pointList="-132,-116,-132,-108" />
+
+<item itemtype="Connector" uid="Connector-21" startpinid="Node-15-2" endpinid="Resistor-12-rPin" pointList="-132,-108,-132,-92" />
 
 </circuit>
