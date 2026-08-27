@@ -7,24 +7,23 @@
 
 #define F_CPU 16000000
 #include <xc.h>
+#include <stdint.h>
 #include "util/delay.h"
 
-#define BIT0_MASK 0b00000001;
-#define BIT1_MASK 0b00000010;
-#define BIT2_MASK 0b00000100;
-#define BIT5_MASK 0b00100000;
-
-
-/*
- * 
+/* 
+ * Controle de vários  LEDs com operações de shift
  */
-int main(void) {
-    //Três formas diferentes de setar a direção de PB2 e PB5
-    DDRB = (1<<DDB5)|(1<<DDB2);
-    DDRB = 0b00100100; //Pode ser escrito como: "0b00100000 |0b00000100"
-    DDRB = BIT5_MASK | BIT2_MASK;
+void GPIO_config(){
+    DDRB = (1<<DDB6)|(1<<DDB4)|(1<<DDB2)|(1<<DDB0); //Bits pares são configurados com 
+}
+
+int main(void){
+    GPIO_config();
+    uint8_t tData = 0x03; //0b00000011
     while(1){
-        //Código
+        PORTB = tData;
+        _delay_ms(1000);
+        tData = tData << 1; //0b00000110 e sempre irá se alterar deslocando para esquerda
     }
 }
 
