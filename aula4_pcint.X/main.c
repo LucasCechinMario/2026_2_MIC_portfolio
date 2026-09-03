@@ -7,8 +7,17 @@
 
 #define F_CPU 16000000
 #include <xc.h>
-#include <avr/interrupt.h>
-#include <util/delay.h>
+#include "avr/interrupt.h"
+#include "util/delay.h"
+#include <stdint.h>
+
+#define KEY_RELEASED 0
+#define KEY_PRESSED 1
+
+uint8_t gKeyState_w = 0;
+uint8_t gKeyState_a = 0;
+uint8_t gKeyState_s = 0;
+uint8_t gKeyState_d = 0;
 
 void GPIO_config(){
     DDRB &= ~((1<<DDB0)|(1<<DDB1)|(1<<DDB2)|(1<<DDB3)); //Portas PB0, PB1, PB2, PB3 como entrada
@@ -29,10 +38,28 @@ void GPIO_incBar(){
 
 
 ISR(PCINT0_vect){
-    PORTC |= (1<<PORTC0);//seta pino PC0
-    _delay_ms(100);
-    PORTC &= ~(1<<PORTC0);//limpa pino PC0
-    GPIO_incBar();
+    uint8_t tCurrentKeyState_w = 0;
+    if(PINB & (1<<PINB0) != 0){//testa pino PB0
+        //PB0 = 1, tecla 2 não pressionada
+        tCurrentKeyState_w = KEY_RELEASED;
+    }
+    else{
+        //PB0 = 0, tecla w pressionada
+        tCurrentKeyState_w = KEY_PRESSED;
+    }
+    if(tCurrentKeyState_w == KEY_PRESSED && gKeyState_w == KEY_RELEASED){
+        //tecla w está pressionada
+        gKeyState_w = KEY_PRESSED;
+        GPIO_incBar();
+    }
+    else if(tCurrentKeyState_w == KEY_RELEASED && gKeyState_w == KEY_PRESSED){
+        //tecla w acabou de
+        gKeyState_w = KEY_RELEASED;
+    }
+    
+    PORTC ^= (1<<PORTC0);//seta pino PC0
+    //_delay_ms(100);
+    //PORTC &= ~(1<<PORTC0);//limpa pino PC0
 }
 
 void main(void) {
