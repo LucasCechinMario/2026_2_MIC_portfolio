@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=aula3_gpio.X
+PROJECTNAME=aula3_interrupt.X
 
 # Active Configuration
 DEFAULTCONF=default
