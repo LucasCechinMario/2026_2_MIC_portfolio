@@ -42,6 +42,7 @@ void UART_send_string(char * pString){
         UART_send_byte(*tMessagePtr);
         tMessagePtr++;
     }
+    UART_send_byte('\n');
 }
 
 int main(void) {
