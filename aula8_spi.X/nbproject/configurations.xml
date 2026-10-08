@@ -19,6 +19,9 @@
                    projectFiles="true">
     </logicalFolder>
     <itemPath>main.c</itemPath>
+    <itemPath>spi.c</itemPath>
+    <itemPath>sm28vlt32.c</itemPath>
+    <itemPath>spi.h</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
