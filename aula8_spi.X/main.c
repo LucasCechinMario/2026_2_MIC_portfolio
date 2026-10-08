@@ -1,22 +1,20 @@
-/* 
- * File:   main.c
- * Author: lucascechinmario
+/*
+ * main.c
  *
- * Created on October 8, 2026, 8:51 AM
- */
-
+ * Created: 10/8/2026 8:50:55 AM
+ *  Author: lucascechinmario
+ */ 
 #define F_CPU 16000000
-#include <stdio.h>
-#include <stdlib.h>
 #include <xc.h>
-#include <util/delay.h>
+#include "util/delay.h"
 #include "spi.h"
+#include "sm28vlt32.h"
 
 int main(void) {
-    SPI_master_config();
-    while(1){
-        SPI_transceive(0x45);
-        _delay_ms(1);
+	SPI_master_config();
+	SM28VLT32_config();
+    while(1) {
+        uint16_t tMemoryData = SM28VLT32_readWord(1000);
+		_delay_ms(1);
     }
 }
-

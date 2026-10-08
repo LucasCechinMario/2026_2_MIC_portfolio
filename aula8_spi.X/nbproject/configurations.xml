@@ -22,6 +22,7 @@
     <itemPath>spi.c</itemPath>
     <itemPath>sm28vlt32.c</itemPath>
     <itemPath>spi.h</itemPath>
+    <itemPath>sm28vlt32.h</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
